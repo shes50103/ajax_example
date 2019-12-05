@@ -22,9 +22,9 @@
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= post.count %></td>
+        <td class="js-count-<%= post.id %>"><%= post.count %></td>
         <td><%= link_to '+', add_normal_post_path(post), method: :post %></td>
-        <td><%= link_to '+', add_ajax_post_path(post), method: :post %></td>
+        <td><%= link_to '+', add_ajax_post_path(post), method: :post, remote: true %></td>
       </tr>
     <% end %>
   </tbody>

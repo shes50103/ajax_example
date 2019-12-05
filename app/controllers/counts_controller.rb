@@ -6,6 +6,7 @@ class CountsController < ApplicationController
   end
 
   def add_ajax
-    redirect_to posts_path
+    @post = Post.find(params[:id])
+    @post.update(count: @post.count + 1)
   end
 end
